@@ -1,0 +1,47 @@
+version: v1.0
+name: Techdiary
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+execution_time_limit:
+  minutes: 15
+
+global_job_config:
+  env_vars:
+    - name: RAILS_ENV
+      value: 'test'
+    - name: DATABASE_URL
+      value: 'postgresql://postgres:@0.0.0.0:5432/myapp_test'
+    - name: BUNDLE_ARGS
+      value: '--deployment --without development staging production --jobs 4'
+
+  prologue:
+    commands:
+      - checkout
+      - cache restore
+
+blocks:
+  - name: Setup
+    task:
+      jobs:
+        - name: Bundle
+          commands:
+          - bundle install ${BUNDLE_ARGS}
+          - cache store
+
+  - name: Test
+    task:
+      prologue:
+        commands:
+          - sem-version ruby 2.6.5
+          - bundle install ${BUNDLE_ARGS} --local
+          - sem-service start postgres
+          - bin/rails db:setup
+
+      jobs:
+        - name: Test
+          commands:
+            - bundle exec rails test test
