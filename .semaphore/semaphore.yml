@@ -45,3 +45,13 @@ blocks:
         - name: Test
           commands:
             - bundle exec rails test test
+
+promotions:
+  - name: Deploy to Heroku
+    pipeline_file: heroku.yml
+
+    # Continuous deployment from master branch
+    auto_promote_on:
+      - result: passed
+        branch:
+          - master
