@@ -15,6 +15,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
@@ -26,8 +29,16 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'formulaic'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'poltergeist'
+  gem 'rspec-its'
+  gem 'shoulda-matchers'
+  gem 'terminal-notifier-guard'
+  gem 'webmock', require: false
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

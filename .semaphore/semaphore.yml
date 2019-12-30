@@ -44,7 +44,7 @@ blocks:
       jobs:
         - name: Test
           commands:
-            - bundle exec rails test test
+            - bundle exec rspec spec
 
 promotions:
   - name: Deploy to Heroku
