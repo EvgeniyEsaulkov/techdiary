@@ -14,10 +14,13 @@ gem 'jbuilder'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  gem 'brakeman', require: false
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails', '~> 3.5'
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
