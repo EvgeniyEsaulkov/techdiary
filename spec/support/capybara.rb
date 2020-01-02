@@ -1,4 +1,4 @@
-require 'capybara/poltergeist'
+require "capybara/poltergeist"
 
 Capybara.configure do |config|
   config.match = :prefer_exact
