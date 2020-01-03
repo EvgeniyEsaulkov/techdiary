@@ -34,6 +34,7 @@ group :development do
   gem "listen"
   gem "slim-rails"
   gem "spring"
+  gem "spring-commands-rspec"
   gem "spring-watcher-listen"
   gem "web-console"
 end
