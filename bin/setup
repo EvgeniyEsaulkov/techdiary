@@ -5,7 +5,11 @@ set -e
 # Setup specific Bundler options if this is CI
 if [ "$CI" ]; then
   BUNDLER_ARGS="--without development staging production"
+else
+  BUNDLER_ARGS=""
 fi
+
+BUNDLER_ARGS="$BUNDLER_ARGS $*"
 
 # Make sure we have Bundler installed
 gem install bundler -v 1.17.3 --conservative
