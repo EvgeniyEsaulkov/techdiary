@@ -15,8 +15,6 @@ global_job_config:
       value: 'test'
     - name: DATABASE_URL
       value: 'postgresql://postgres:@0.0.0.0:5432/myapp_test'
-    - name: BUNDLE_ARGS
-      value: '--deployment --without development staging production --jobs 4'
 
   prologue:
     commands:
@@ -29,7 +27,7 @@ blocks:
       jobs:
         - name: Bundle
           commands:
-          - bundle install ${BUNDLE_ARGS}
+          - bin/setup
           - cache store
 
   - name: Test
@@ -37,14 +35,13 @@ blocks:
       prologue:
         commands:
           - sem-version ruby 2.6.5
-          - bundle install ${BUNDLE_ARGS} --local
           - sem-service start postgres
-          - bin/rails db:setup
+          - ./bin/setup
 
       jobs:
         - name: Test
           commands:
-            - bundle exec rspec spec
+            - ./bin/ci
 
 promotions:
   - name: Deploy to Heroku
