@@ -9,6 +9,14 @@ agent:
 execution_time_limit:
   minutes: 15
 
+auto_cancel:
+  queued:
+    when: 'true'
+
+fail_fast:
+  stop:
+    when: 'true'
+
 global_job_config:
   env_vars:
     - name: RAILS_ENV
@@ -34,10 +42,6 @@ blocks:
 
   - name: Test
     task:
-      prologue:
-        commands:
-          - ./bin/setup
-
       jobs:
         - name: Test
           commands:
