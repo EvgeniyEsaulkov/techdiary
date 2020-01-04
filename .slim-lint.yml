@@ -23,8 +23,9 @@ linters:
     # These cops are incredibly noisy since the Ruby we extract from Slim
     # templates isn't well-formatted, so we ignore them.
     ignored_cops:
+      - Layout/EndAlignment
+      - Layout/TrailingEmptyLines
       - Lint/BlockAlignment
-      - Lint/EndAlignment
       - Lint/Void
       - Metrics/LineLength
       - Style/AlignHash
@@ -36,7 +37,6 @@ linters:
       - Style/IndentationConsistency
       - Style/IndentationWidth
       - Style/Next
-      - Style/TrailingBlankLines
       - Style/TrailingWhitespace
       - Style/WhileUntilModifier
       - Style/NestedTernaryOperator
