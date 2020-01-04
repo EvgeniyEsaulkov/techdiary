@@ -45,7 +45,7 @@ blocks:
       jobs:
         - name: Test
           commands:
-            - ./bin/setup --local
+            - ./bin/setup
             - ./bin/ci
 
 promotions:
