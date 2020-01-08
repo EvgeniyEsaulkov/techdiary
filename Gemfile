@@ -7,6 +7,7 @@ gem "pg"
 gem "rails", "~> 6.0.2", ">= 6.0.2.1"
 
 gem "coffee-rails"
+gem "devise"
 gem "jbuilder"
 gem "puma"
 gem "sass-rails", ">= 6"
@@ -20,6 +21,7 @@ group :development, :test do
   gem "brakeman", require: false
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "coffeelint"
+  gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "faker"
   gem "rspec-rails", "~> 3.5"
