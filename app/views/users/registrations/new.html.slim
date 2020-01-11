@@ -1,28 +1,27 @@
-.row
-  .columns
-    h2 = title("Sign up")
+.grid-container
+  .grid-x.grid-padding-y: h3.cell Sign up
 
-.row
-  .medium-5.columns
-    = simple_form_for resource,
-        as: resource_name,
-        url: registration_path(resource_name) do |f|
+  .grid-x.grid-padding-x.grid-padding-y
+    .cell.medium-5
+      = simple_form_for resource,
+          as: resource_name,
+          url: registration_path(resource_name) do |f|
 
-      legend
-        | Create your
-        '
-        strong Techdiary website
-        '
-        | account
+        legend
+          | Create your
+          '
+          strong Techdiary website
+          '
+          | account
 
-      .form-inputs
-        = f.input :full_name, required: true, autofocus: true
-        = f.input :email, required: true
-        = f.input :password, required: true
-        = f.input :password_confirmation, required: true
+        .form-inputs
+          = f.input :full_name, required: true, autofocus: true
+          = f.input :email, required: true
+          = f.input :password, required: true
+          = f.input :password_confirmation, required: true
 
-      .form-actions
-        = f.button :submit, "Sign up"
+        .form-actions
+          = f.button :submit, "Sign up"
 
-  .medium-5.medium-offset-1.columns.end
-    = render "users/shared/links"
+    .cell.medium-5.medium-offset-1
+      = render "users/shared/links"

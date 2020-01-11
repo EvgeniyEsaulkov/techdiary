@@ -6,14 +6,20 @@ ruby "2.6.5"
 gem "pg"
 gem "rails", "~> 6.0.2", ">= 6.0.2.1"
 
+# assets
+gem "autoprefixer-rails"
 gem "coffee-rails"
+gem "foundation-icons-sass-rails"
+gem "foundation-rails"
+gem "sass-rails", ">= 6"
+gem "turbolinks", "~> 5"
+gem "webpacker", "~> 4.0"
+
 gem "devise"
 gem "jbuilder"
 gem "puma"
-gem "sass-rails", ">= 6"
+gem "simple_form"
 gem "slim"
-gem "turbolinks", "~> 5"
-gem "webpacker", "~> 4.0"
 
 gem "bootsnap", ">= 1.4.2", require: false
 

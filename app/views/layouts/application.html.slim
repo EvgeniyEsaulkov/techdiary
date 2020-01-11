@@ -1,13 +1,20 @@
 doctype html
-
-html
+html lang="en"
   head
-    title Techdiary
-    = csrf_meta_tags
-    = csp_meta_tag
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title == content_for?(:title) ? yield(:title) : "Techdiary"
 
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload"
     = javascript_pack_tag "application", "data-turbolinks-track": "reload"
+    = csrf_meta_tag
 
   body
-    = yield
+    = render "navigation"
+    = render "messages"
+
+    main.container
+      = yield
+
+    = render "footer"
