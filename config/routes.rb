@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get "/", to: "rails/welcome#index"
+  devise_for :users, controllers: { registrations: "users/registrations" }
+  root to: "pages#home"
 end

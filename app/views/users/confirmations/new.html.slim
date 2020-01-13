@@ -1,0 +1,18 @@
+.grid-container
+  .grid-x.grid-padding-y: h3.cell Didn't receive confirmation instructions?
+
+  .grid-x.grid-padding-x.grid-padding-y
+    .cell.medium-5
+      = simple_form_for resource,
+          as: resource_name,
+          url: confirmation_path(resource_name),
+          html: { method: :post } do |f|
+
+        .form-inputs
+          = f.input :email, required: true
+
+        .form-actions
+          = f.button :submit, "Resend confirmation instructions"
+
+    .cell.medium-5.medium-offset-1
+      = render "users/shared/links"

@@ -1,0 +1,5 @@
+.top-bar-left
+  ul.menu
+    li = link_to "Techdiary", root_path
+    - if user_signed_in?
+      = link_to "Home", root_path

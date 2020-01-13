@@ -1,0 +1,27 @@
+.grid-container
+  .grid-x.grid-padding-y: h3.cell Sign up
+
+  .grid-x.grid-padding-x.grid-padding-y
+    .cell.medium-5
+      = simple_form_for resource,
+          as: resource_name,
+          url: registration_path(resource_name) do |f|
+
+        legend
+          | Create your
+          '
+          strong Techdiary website
+          '
+          | account
+
+        .form-inputs
+          = f.input :full_name, required: true, autofocus: true
+          = f.input :email, required: true
+          = f.input :password, required: true
+          = f.input :password_confirmation, required: true
+
+        .form-actions
+          = f.button :submit, "Sign up"
+
+    .cell.medium-5.medium-offset-1
+      = render "users/shared/links"
