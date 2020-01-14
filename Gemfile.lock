@@ -161,6 +161,8 @@ GEM
     json (2.3.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -386,6 +388,7 @@ DEPENDENCIES
   guard-rspec
   jbuilder
   launchy
+  letter_opener
   listen
   pg
   poltergeist
