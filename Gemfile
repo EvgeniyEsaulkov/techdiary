@@ -18,6 +18,7 @@ gem "webpacker", "~> 4.0"
 gem "devise"
 gem "jbuilder"
 gem "puma"
+gem "sidekiq"
 gem "simple_form"
 gem "slim"
 

@@ -11,7 +11,7 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new(feedback_params)
 
     if @feedback.save
-      # send_email_to_admin
+      send_email_to_admin
       redirect_to new_feedback_url, notice: t(".success")
     else
       render :new
