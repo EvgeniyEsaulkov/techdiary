@@ -47,6 +47,7 @@ blocks:
         - name: Test
           commands:
             - ./bin/setup
+            - bundle exec rails assets:precompile
             - ./bin/ci
 
 promotions:
