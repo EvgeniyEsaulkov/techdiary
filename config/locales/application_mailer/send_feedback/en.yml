@@ -1,4 +1,4 @@
 en:
   application_mailer:
-    send_email_to_admin:
+    send_feedback:
       subject: "New feedback"
