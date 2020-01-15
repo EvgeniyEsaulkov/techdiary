@@ -4,7 +4,7 @@ feature "Send feedback" do
   let(:feedback) { build :feedback }
 
   feature "User logged in" do
-    include_context "current user signed in"
+    include_context "when current user signed in"
 
     background do
       visit new_feedback_path

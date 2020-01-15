@@ -5,6 +5,6 @@ class ApplicationMailer < ActionMailer::Base
   def send_feedback
     @feedback = params[:feedback]
 
-    mail to: ENV['ADMIN_EMAIL']
+    mail to: ENV["ADMIN_EMAIL"]
   end
 end

@@ -25,12 +25,12 @@ linters:
     ignored_cops:
       - Layout/ArgumentAlignment
       - Layout/EndAlignment
+      - Layout/HashAlignment
       - Layout/IndentationWidth
       - Layout/TrailingEmptyLines
       - Lint/BlockAlignment
       - Lint/Void
       - Metrics/LineLength
-      - Style/AlignHash
       - Style/AlignParameters
       - Style/BlockNesting
       - Style/FileName
