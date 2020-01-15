@@ -1,0 +1,4 @@
+en:
+  application_mailer:
+    send_feedback:
+      subject: "New feedback"

@@ -1,0 +1,4 @@
+en:
+  feedbacks:
+    create:
+      success: "Your message was successfully delivered. Thank you!"

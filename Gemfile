@@ -18,6 +18,7 @@ gem "webpacker", "~> 4.0"
 gem "devise"
 gem "jbuilder"
 gem "puma"
+gem "sidekiq"
 gem "simple_form"
 gem "slim"
 
@@ -39,6 +40,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "letter_opener"
   gem "listen"
   gem "slim-rails"
   gem "spring"
